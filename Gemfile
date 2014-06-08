@@ -13,6 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # Use Slim templates
 gem 'slim-rails', '~> 2.1.4'
+# Use Bootstrap front-end framework
+gem 'bootstrap-sass', '~> 3.1.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
