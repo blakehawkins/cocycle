@@ -11,6 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140609111503) do
+
+  create_table "routes", force: true do |t|
+    t.decimal  "start_lat",   precision: 9, scale: 6
+    t.decimal  "start_long",  precision: 9, scale: 6
+    t.decimal  "finish_lat",  precision: 9, scale: 6
+    t.decimal  "finish_long", precision: 9, scale: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
