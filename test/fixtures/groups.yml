@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+morning:
+  route: one
+  start_time: <%= 8.hours %>
+
+afternoon:
+  route: two
+  start_time: <%= 17.hours + 15.minutes %>
