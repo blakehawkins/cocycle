@@ -8,7 +8,7 @@ html lang="en"
       script src="http://cdn.jsdelivr.net/g/html5shiv(html5shiv.min.js),respond"
     = csrf_meta_tags
   body
-    header.container= render 'header'
+    header= render 'header'
     article.container= yield
-    footer.container= render 'footer'
+    footer= render 'footer'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
