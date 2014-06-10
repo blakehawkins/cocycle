@@ -16,3 +16,5 @@ Contributing
 ------------
 
 This application uses the [Slim](http://slim-lang.com) templating engine instead of ERB.
+
+Write [unit and integration tests](http://docs.seattlerb.org/minitest/) for each new piece of functionality, and make sure the rest of the test suite passes (`bin/rake test`) before committing.
