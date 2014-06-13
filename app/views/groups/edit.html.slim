@@ -1,2 +1,4 @@
 h1 Edit Group
 = render 'form'
+= link_to 'delete', @group, method: :delete, data: { confirm: 'Delete this group for ever?' },
+  class: 'btn btn-danger pull-right', role: 'button'
