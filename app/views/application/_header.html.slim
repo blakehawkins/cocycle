@@ -9,6 +9,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
       a.navbar-brand href=root_path Co-Cycle
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        = nav_link "Home", root_path
-        = nav_link "Groups", groups_path
-        = nav_link "New Group", new_group_path
+        li class=('active' if current_page? controller: 'home')
+          a href=root_path Home
+        li class=('active' if current_page? controller: 'groups')
+          a href=groups_path Groups
