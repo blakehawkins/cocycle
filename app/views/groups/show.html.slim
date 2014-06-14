@@ -2,3 +2,6 @@ h1.page-header
   'Group ##{@group.id}
   small leaves at <time>#{@group.time}</time>
   a.btn.btn-default.pull-right role="button" href=edit_group_path(@group) edit
+p.text-muted.text-right
+  = time_tag @group.updated_at, title: @group.updated_at.to_formatted_s(:long) do
+    |updated #{time_ago_in_words @group.updated_at} ago
