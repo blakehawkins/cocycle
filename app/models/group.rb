@@ -16,6 +16,6 @@ class Group < ActiveRecord::Base
   end
 
   def time
-    Time.at(start_time).utc.to_s :time
+    Time.at(start_time).utc.to_s :time if start_time
   end
 end
