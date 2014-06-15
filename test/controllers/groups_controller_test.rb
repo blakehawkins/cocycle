@@ -13,7 +13,7 @@ class GroupsControllerTest < ActionController::TestCase
 
   test 'should create group' do
     assert_difference -> { Group.count } do
-      post :create, group: { start_time: 12.hours }
+      post :create, group: { time: '12:30' }
     end
 
     assert_redirected_to group_path assigns :group
@@ -21,7 +21,7 @@ class GroupsControllerTest < ActionController::TestCase
 
   test 'should not create group with missing params' do
     assert_no_difference -> { Group.count } do
-      post :create, group: { start_time: nil }
+      post :create, group: { time: nil }
     end
   end
 
@@ -42,8 +42,11 @@ class GroupsControllerTest < ActionController::TestCase
   end
 
   test 'should update group' do
-    patch :update, id: @group, group: { start_time: 13.hours + 13.minutes }
-    assert_equal Group.find(@group).start_time, 13.hours + 13.minutes
+    patch :update, id: @group, group: { time: '13:13' }
+
+    group = Group.find @group
+    assert_equal '13:13', group.time
+    assert_equal [13, 13], [group.hour, group.minute]
 
     assert_redirected_to group_path assigns :group
   end

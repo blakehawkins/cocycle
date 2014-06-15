@@ -1,21 +1,22 @@
 class Group < ActiveRecord::Base
-  TIME_REGEXP = /\A
-    (?<hour>[01]\d|2[0-3])      # hour 00..23
-    :?                          # optional separator
-    (?<minute>[0-5]\d)          # minute 00..59
-  \Z/x
+  attr_writer :time
 
-  belongs_to :route
-
-  validates :start_time, inclusion: 0...24.hours
-
-  def time=(str)
-    self.start_time = nil unless TIME_REGEXP.match str do |match|
-      self.start_time = match['hour'].to_i.hours + match['minute'].to_i.minutes
-    end
-  end
+  validates :hour,
+            presence: true,
+            numericality: { only_integer: true,
+                            greater_than_or_equal_to: 0,
+                            less_than: 24 }
+  validates :minute,
+            presence: true,
+            numericality: { only_integer: true,
+                            greater_than_or_equal_to: 0,
+                            less_than: 60 }
 
   def time
-    Time.at(start_time).utc.to_s :time if start_time
+    format '%02d:%02d', hour || 0, minute || 0
+  end
+
+  def time=(input)
+    self.hour, self.minute = input.to_s.scan(/\d+/)
   end
 end

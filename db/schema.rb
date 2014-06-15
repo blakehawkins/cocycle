@@ -11,22 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609203212) do
+ActiveRecord::Schema.define(version: 20140614135610) do
 
   create_table "groups", force: true do |t|
-    t.integer  "route_id"
-    t.integer  "start_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "groups", ["route_id"], name: "index_groups_on_route_id"
-
-  create_table "routes", force: true do |t|
-    t.decimal  "start_lat",   precision: 9, scale: 6
-    t.decimal  "start_long",  precision: 9, scale: 6
-    t.decimal  "finish_lat",  precision: 9, scale: 6
-    t.decimal  "finish_long", precision: 9, scale: 6
+    t.integer  "hour"
+    t.integer  "minute"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

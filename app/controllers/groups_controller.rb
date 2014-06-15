@@ -52,6 +52,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:start_time)
+    params.require(:group).permit(:time)
   end
 end
