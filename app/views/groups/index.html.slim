@@ -3,7 +3,5 @@ h1.page-header
   a.btn.btn-default.pull-right role="button" href=new_group_path new
 section.list-group
   - @groups.each do |group|
-    a.list-group-item href=group_path(group)
-      h4
-        'Group ##{group.id}
-        small leaves at <time>#{group.time}</time>
+    = link_to group, class: 'list-group-item' do
+      h4 Group ##{group.id} <small>leaves at <time>#{group.time}</time></small>
