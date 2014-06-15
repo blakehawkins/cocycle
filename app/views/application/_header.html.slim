@@ -15,3 +15,8 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
           a href=groups_path Groups
 noscript.container.center-block
   .alert.alert-danger <strong>Sorry!</strong> This site requires JavaScript to function correctly.
+.container
+  - if flash.alert
+    .alert.alert-danger= flash.alert
+  - if flash.notice
+    .alert.alert-info= flash.notice

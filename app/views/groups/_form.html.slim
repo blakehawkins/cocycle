@@ -1,4 +1,12 @@
 = form_for @group do |f|
+  - if @group.errors.any?
+    .alert.alert-danger
+      strong=> pluralize @group.errors.count, 'error'
+      |prevented the form from being submitted:
+      ul
+        - @group.errors.full_messages.each do |msg|
+          li= msg
+
   .form-group.input-group
     = f.label :time, class: 'input-group-addon' do
       span.glyphicon.glyphicon-time
