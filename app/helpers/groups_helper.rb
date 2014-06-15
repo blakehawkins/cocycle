@@ -1,2 +1,29 @@
 module GroupsHelper
+  def nav_back_link
+    link_to 'back',
+            if @group.nil? then root_path
+            elsif @group.new_record? || current_page?(@group) then groups_path
+            else @group
+            end,
+            class: 'btn btn-default'
+  end
+
+  def nav_new_link
+    return unless current_page?(action: 'index')
+    link_to 'new', new_group_path,
+            class: 'btn btn-primary'
+  end
+
+  def nav_edit_link
+    return if @group.nil? || @group.new_record? || current_page?(action: 'edit')
+    link_to 'edit', edit_group_path(@group),
+            class: 'btn btn-default'
+  end
+
+  def nav_delete_link
+    return if @group.nil? || @group.new_record?
+    link_to 'delete', @group,
+            class: 'btn btn-danger', role: 'button', method: :delete,
+            data: { confirm: 'Delete this group?' }
+  end
 end

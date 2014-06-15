@@ -1,6 +1,2 @@
-h1.page-header
-  'Edit Group ##{@group.id}
-  a.btn.btn-default.pull-right href=group_path(@group) back
+h1.page-header <small>Editing</small> Group ##{@group.id} #{render 'nav'}
 = render 'form'
-= link_to 'delete', @group, method: :delete, data: { confirm: 'Delete this group for ever?' },
-  class: 'btn btn-danger pull-right', role: 'button'
