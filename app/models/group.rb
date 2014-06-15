@@ -1,13 +1,9 @@
 class Group < ActiveRecord::Base
-  attr_writer :time
-
   validates :hour,
-            presence: true,
             numericality: { only_integer: true,
                             greater_than_or_equal_to: 0,
                             less_than: 24 }
   validates :minute,
-            presence: true,
             numericality: { only_integer: true,
                             greater_than_or_equal_to: 0,
                             less_than: 60 }
@@ -17,6 +13,7 @@ class Group < ActiveRecord::Base
   end
 
   def time=(input)
-    self.hour, self.minute = input.to_s.scan(/\d+/)
+    _, h, m = */\A([01]\d|2[0-3]):([0-5]\d)\Z/.match(input.to_s)
+    self.hour, self.minute = h, m
   end
 end
