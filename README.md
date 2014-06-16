@@ -8,7 +8,7 @@ Make sure you have an up-to-date Ruby, using a tool like [rbenv](https://github.
 
 Install the required gems with `bundle install` in the project route.  You need a JavaScript runtime such as [Node.js](http://nodejs.org) to compile assets, see [the ExecJS README](https://github.com/sstephenson/execjs#readme).
 
-Create the development database locally with `bin/rake db:schema:load`.
+Create the development database locally with `rake db:setup`.  This will also seed the development database with a sample of [geocoded postcodes for Glasgow](http://dashboard.glasgow.gov.uk/ckanstore/files/2014-03-03T20%3A36%3A53.752Z/glasgow-postcodes-geocoded.csv) (see `db/seeds.rb` for how this is done.)
 
 Run `ruby bin/rails server` and point your browser at [localhost:3000](http://localhost:3000).
 
