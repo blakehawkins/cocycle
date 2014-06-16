@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pointhouse rd:
+  postcode: G3 8RS
+  lat: 55.865129
+  long: -4.306304
+
+george square:
+  postcode: G2 1DU
+  lat: 55.868629
+  long: -4.241889

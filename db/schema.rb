@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616121258) do
+ActiveRecord::Schema.define(version: 20140616133518) do
 
   create_table "groups", force: true do |t|
     t.string   "time",       limit: 5
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "locations", force: true do |t|
+    t.string   "postcode",   limit: 8
+    t.decimal  "lat",                  precision: 8, scale: 6
+    t.decimal  "long",                 precision: 9, scale: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["postcode"], name: "index_locations_on_postcode", unique: true
 
 end
