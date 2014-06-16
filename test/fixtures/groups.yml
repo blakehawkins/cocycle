@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 morning:
-  hour: 8
-  minute: 15
+  time: '08:15'
 
 afternoon:
-  hour: 17
-  minute: 30
+  time: '17:30'

@@ -25,6 +25,12 @@ class GroupsControllerTest < ActionController::TestCase
     end
   end
 
+  test 'should not create group with unparsable time' do
+    assert_no_difference -> { Group.count } do
+      post :create, group: { time: "one o'clock" }
+    end
+  end
+
   test 'should get new' do
     get :new
     assert_response :success
@@ -46,7 +52,6 @@ class GroupsControllerTest < ActionController::TestCase
 
     group = Group.find @group
     assert_equal '13:13', group.time
-    assert_equal [13, 13], [group.hour, group.minute]
 
     assert_redirected_to group_path assigns :group
   end
