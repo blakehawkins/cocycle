@@ -15,6 +15,8 @@ Run `bin/rails server` and point your browser at [localhost:3000](http://localho
 Contributing
 ------------
 
+Code is available under the permissive MIT license, see the file `LICENSE`.
+
 This application uses the [Slim](http://slim-lang.com) templating engine instead of ERB.
 
 Write [unit and integration tests](http://docs.seattlerb.org/minitest/) for each new piece of functionality, and check they pass with `bin/rake test` before committing.
