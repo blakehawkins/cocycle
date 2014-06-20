@@ -1,5 +1,7 @@
-h1.page-header All Groups #{render 'nav'}
+h1.page-header
+  |All Groups
+  = render 'nav'
 section.list-group
   - @groups.each do |group|
     = link_to group, class: 'list-group-item' do
-      h4 Group ##{group.id} <small>leaves at <time>#{group.time}</time></small>
+      h4= render group

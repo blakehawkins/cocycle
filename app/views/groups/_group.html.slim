@@ -1,0 +1,7 @@
+'Group ##{group.id}
+small
+  'leaving
+  - if group.location
+    strong=> group.location.postcode
+  'at
+  time= group.time
