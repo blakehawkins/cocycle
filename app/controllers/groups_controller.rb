@@ -52,6 +52,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:time)
+    params.require(:group).permit(:time, :location_id)
   end
 end
