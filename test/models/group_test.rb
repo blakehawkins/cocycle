@@ -11,7 +11,7 @@ class GroupTest < ActiveSupport::TestCase
   end
 
   test 'should not save group with invalid time' do
-    %w(12:345 :34 12: 24:00 0 12 00:60 ab:cd).each do |t|
+    %w(12:345 :34 12: 24:00 00:60 ab:cd).each do |t|
       @group.time = t
       assert_not @group.save, "Group saved with time: #{t.inspect}"
     end
