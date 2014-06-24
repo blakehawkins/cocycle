@@ -21,4 +21,19 @@ class GroupTest < ActiveSupport::TestCase
     assert @group.update time: '01:23'
     assert_equal '01:23', @group.time
   end
+
+  test 'should convert a 1-digit hour to a time' do
+    assert @group.update time: '1'
+    assert_equal '01:00', @group.time
+  end
+
+  test 'should convert a 2-digit hour to a time' do
+    assert @group.update time: '12'
+    assert_equal '12:00', @group.time
+  end
+
+  test 'should convert a 4-digit military time' do
+    assert @group.update time: '0123'
+    assert_equal '01:23', @group.time
+  end
 end
