@@ -13,22 +13,22 @@ module GroupsHelper
   end
 
   def nav_back_link
-    link_to 'back', back_path,
+    link_to glyphicon(:chevron_left, 'Go back'), back_path,
             title: 'Go back', class: 'btn btn-default'
   end
 
   def nav_new_link
-    link_to 'new', new_group_path,
+    link_to glyphicon(:plus, 'New group'), new_group_path,
             title: 'New group', class: 'btn btn-primary'
   end
 
   def nav_edit_link
-    link_to 'edit', edit_group_path(@group),
+    link_to glyphicon(:pencil, 'Edit group'), edit_group_path(@group),
             title: 'Edit group', class: 'btn btn-default'
   end
 
   def nav_delete_link
-    link_to 'delete', @group,
+    link_to glyphicon(:trash, 'Delete Group'), @group,
             title: 'Delete Group', class: 'btn btn-danger',
             role: 'button', method: :delete,
             data: { confirm: 'Delete this group?' }
