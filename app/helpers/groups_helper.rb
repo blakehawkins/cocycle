@@ -5,12 +5,15 @@ module GroupsHelper
     end
   end
 
+  def back_path
+    if @group.nil? then root_path
+    elsif @group.new_record? || current_page?(@group) then groups_path
+    else @group
+    end
+  end
+
   def nav_back_link
-    link_to 'back',
-            if @group.nil? then root_path
-            elsif @group.new_record? || current_page?(@group) then groups_path
-            else @group
-            end,
+    link_to 'back', back_path,
             title: 'Go back', class: 'btn btn-default'
   end
 
