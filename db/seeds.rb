@@ -13,15 +13,21 @@ require 'csv'
 Location.delete_all
 
 open(@data_url) do |io|
+  puts "Downloading postcode data from #{@data_url}"
+
   # Create a new location record from every postcode record in
-  # production, or every 500th elsewhere.
+  # the range 'G1 ???'..'G19 ???'.
   records = CSV.new(io, headers: true, header_converters: :symbol)
-            .each_slice(Rails.env.production? ? 1 : 500)
-            .map(&:first)
+            .select { |record| record[:label] =~ /\AG1?\d / }
+
+  # Take a subset of the records when seeding the development database.
+  records = records.each_slice(50).map(&:first) unless Rails.env.production?
+
+  puts "Creating #{records.count} location records (this will take a while)..."
 
   records.each do |r|
     Location.create!(postcode: r[:label], lat: r[:lat], long: r[:long])
   end
 
-  puts "#{records.count} location records created"
+  puts "#{Location.count} location records created"
 end
