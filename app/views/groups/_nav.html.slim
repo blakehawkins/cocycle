@@ -1,5 +1,5 @@
 nav.btn-group.pull-right
   = nav_back_link
-  = nav_new_link
-  = nav_edit_link
-  = nav_delete_link
+  = nav_new_link if current_page?(groups_path)
+  = nav_edit_link if @group && current_page?(@group)
+  = nav_delete_link if @group && @group.persisted?
