@@ -30,7 +30,6 @@ module GroupsHelper
   def nav_delete_link
     link_to glyphicon(:trash, 'Delete Group'), @group,
             title: 'Delete Group', class: 'btn btn-danger',
-            role: 'button', method: :delete,
-            data: { confirm: 'Delete this group?' }
+            role: 'button', method: :delete
   end
 end
