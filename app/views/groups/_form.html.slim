@@ -8,13 +8,11 @@
           li= msg
 
   .form-group.input-group
-    = f.label :time, class: 'input-group-addon' do
-      span.glyphicon.glyphicon-time
-      span.sr-only Time:
+    = f.label :time, title: 'Time', class: 'input-group-addon' do
+      = glyphicon :time, 'Time'
     = f.text_field :time, class: 'form-control', placeholder: 'Time'
   .form-group.input-group
-    = f.label :location, class: 'input-group-addon' do
-      span.glyphicon.glyphicon-map-marker
-      span.sr-only Location:
+    = f.label :location, title: 'Location', class: 'input-group-addon' do
+      = glyphicon :map_marker, 'Location'
     = f.collection_select :location_id, Location.all, :id, :postcode, { prompt: true }, { class: 'form-control' }
   = f.submit class: 'btn btn-primary pull-right'

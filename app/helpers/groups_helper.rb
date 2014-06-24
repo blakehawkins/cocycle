@@ -1,4 +1,10 @@
 module GroupsHelper
+  def glyphicon(code, alt = nil)
+    content_tag :span, class: "glyphicon glyphicon-#{code.to_s.dasherize}" do
+      content_tag(:span, alt.to_s, class: 'sr-only') if alt
+    end
+  end
+
   def nav_back_link
     link_to 'back',
             if @group.nil? then root_path
