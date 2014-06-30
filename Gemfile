@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'slim-rails', '~> 2.1.4'
 # Use Bootstrap front-end framework
 gem 'bootstrap-sass', '~> 3.2.0'
+# Use autoprefixer to add browser vendor prefixes automatically
+gem 'autoprefixer-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
