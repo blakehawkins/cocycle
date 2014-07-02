@@ -4,7 +4,7 @@ The Co-Cycle Web App
 Getting Started
 ---------------
 
-Make sure you have an up-to-date Ruby, using a tool like [rbenv](https://github.com/sstephenson/rbenv/) can help.  If you use Windows, developing in a POSIX environment on a virtual machine can save a lot of hassle.
+Make sure you have an up-to-date Ruby, using a tool like [rbenv](https://github.com/sstephenson/rbenv/) can help.  If you use Windows, developing in a POSIX environment on a virtual machine can save a lot of hassle.  You will also need the PostgreSQL database server installed and running.
 
 Install the required gems with `bundle install` in the project route.  You need a JavaScript runtime such as [Node.js](http://nodejs.org) to compile assets, see [the ExecJS README](https://github.com/sstephenson/execjs#readme).
 

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140620230654) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "groups", force: true do |t|
     t.string   "time",        limit: 5
     t.datetime "created_at"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140620230654) do
     t.integer  "location_id"
   end
 
-  add_index "groups", ["location_id"], name: "index_groups_on_location_id"
+  add_index "groups", ["location_id"], name: "index_groups_on_location_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "postcode",   limit: 8
@@ -30,6 +33,6 @@ ActiveRecord::Schema.define(version: 20140620230654) do
     t.datetime "updated_at"
   end
 
-  add_index "locations", ["postcode"], name: "index_locations_on_postcode", unique: true
+  add_index "locations", ["postcode"], name: "index_locations_on_postcode", unique: true, using: :btree
 
 end
