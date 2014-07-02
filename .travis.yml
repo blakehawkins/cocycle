@@ -1,5 +1,10 @@
 language: ruby
-rvm: [2.1.2]
+rvm: 2.1.2
 bundler_args: --without production
-before_script:
-  - psql -c 'create database cocycle_test;' -U postgres
+before_script: psql -c 'create database cocycle_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: SiYeI7FKXQchlmNvl4sfnZFxIeI05yixMlD0n60m5Qiz3KkW3aQsep+H2znaNU+BiyxepTzOZNEvIUqTceaAdlkWv/Vloat4LHHsJ2iweH8Kj60AUuchDPf934WQogdqVeJuUxd18Iu7dCL36Z4ftUbGxAAqLZnmKCayOcV07G8=
+  on:
+    repo: CoCycle/cocycle
