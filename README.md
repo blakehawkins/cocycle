@@ -1,6 +1,8 @@
 The Co-Cycle Web App
 ====================
 
+[![Build Status](https://travis-ci.org/CoCycle/cocycle.svg?branch=master)](https://travis-ci.org/CoCycle/cocycle)
+
 Getting Started
 ---------------
 
