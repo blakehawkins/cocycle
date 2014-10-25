@@ -2,8 +2,8 @@ doctype html
 html lang="en"
   head
     title Co-Cycle
-    meta charset="utf-8"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     /[if lt IE 9]
       script src="http://cdn.jsdelivr.net/g/html5shiv(html5shiv.min.js),respond"
     = csrf_meta_tags
@@ -11,4 +11,3 @@ html lang="en"
     header= render 'header'
     article.container= yield
     footer= render 'footer'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true

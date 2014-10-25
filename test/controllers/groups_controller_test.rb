@@ -50,7 +50,7 @@ class GroupsControllerTest < ActionController::TestCase
   test 'should update group' do
     patch :update, id: @group, group: { time: '13:13' }
 
-    group = Group.find @group
+    group = Group.find @group.id
     assert_equal '13:13', group.time
 
     assert_redirected_to group_path assigns :group

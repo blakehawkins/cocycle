@@ -16,7 +16,6 @@
 #
 default: &default
   adapter: postgresql
-  username: postgres
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -83,4 +82,4 @@ production:
   <<: *default
   database: cocycle_production
   username: cocycle
-  password: <%= ENV['POSTGRES-TEST_DATABASE_PASSWORD'] %>
+  password: <%= ENV['COCYCLE_DATABASE_PASSWORD'] %>
