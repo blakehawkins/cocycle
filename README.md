@@ -8,7 +8,7 @@ Co-Cycle is a [Ruby on Rails](http://rubyonrails.org/) web application.
 
 ### System dependencies
 
-- Ruby 2.1.3
+- Ruby 2.1.4
 - PostgreSQL
 
 ### Getting up and running
