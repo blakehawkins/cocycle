@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.beta2'
+gem 'rails', '4.2.0.beta4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Slim for .html.slim views
 gem 'slim', '~> 2.1.0'
 # Use Bootstrap styles in the asset pipeline
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.0'
 # Use Autoprefixer to add browser vendor prefixes automatically
 gem 'autoprefixer-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
