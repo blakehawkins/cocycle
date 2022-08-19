@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 5.0.0'
 # Use Slim for .html.slim views
 gem 'slim', '~> 4.1.0'
 # Use Bootstrap styles in the asset pipeline
-gem 'bootstrap-sass', '~> 3.3.0'
+gem 'bootstrap-sass', '>= 3.4.1'
 # Use Autoprefixer to add browser vendor prefixes automatically
 gem 'autoprefixer-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
