@@ -13,7 +13,7 @@ class GroupsControllerTest < ActionController::TestCase
 
   test 'should create group' do
     assert_difference -> { Group.count } do
-      post :create, group: { time: '12:30' }
+      post :create, params: { group: { time: '12:30' } }
     end
 
     assert_redirected_to group_path assigns :group
@@ -21,13 +21,13 @@ class GroupsControllerTest < ActionController::TestCase
 
   test 'should not create group with missing params' do
     assert_no_difference -> { Group.count } do
-      post :create, group: { time: nil }
+      post :create, params: { group: { time: nil } }
     end
   end
 
   test 'should not create group with unparsable time' do
     assert_no_difference -> { Group.count } do
-      post :create, group: { time: "one o'clock" }
+      post :create, params: { group: { time: "one o'clock" } }
     end
   end
 
@@ -38,17 +38,17 @@ class GroupsControllerTest < ActionController::TestCase
   end
 
   test 'should get edit' do
-    get :edit, id: @group
+    get :edit, params: { id: @group }
     assert_response :success
   end
 
   test 'should show group' do
-    get :show, id: @group
+    get :show, params: { id: @group }
     assert_response :success
   end
 
   test 'should update group' do
-    patch :update, id: @group, group: { time: '13:13' }
+    patch :update, params: { id: @group, group: { time: '13:13' } }
 
     group = Group.find @group.id
     assert_equal '13:13', group.time
@@ -58,7 +58,7 @@ class GroupsControllerTest < ActionController::TestCase
 
   test 'should destroy group' do
     assert_difference -> { Group.count }, -1 do
-      delete :destroy, id: @group
+      delete :destroy, params: { id: @group }
     end
 
     assert_redirected_to groups_path
