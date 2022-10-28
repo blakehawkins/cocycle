@@ -5,7 +5,7 @@ gem 'json', '~> 2.6.2'
 gem 'psych', '~> 3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.1.6.1'
+gem 'rails', '6.1.7.0'
 gem 'rails-controller-testing'
 
 # Use postgresql as the database for Active Record
